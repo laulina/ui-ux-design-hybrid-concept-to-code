@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+/* strokes' styling */
+.sky, .sand-dark, .sand-light, .wave-xl, .wave-xs, .wave-lg, .wave-sm, .wave-md {
+    fill: none;
+    stroke-linecap: square;
+    stroke-linejoin: round;
+    animation: loading 2s ease-out 2 alternate forwards;
+}
+
+
+.sky {
+    stroke: #01BFFF;
+    stroke-width: 540;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 1920;
+    stroke-dashoffset: 1920;
+    animation-delay: 0.2s;
+}
+
+.sand-dark {
+    stroke: #FFDF9E;
+    stroke-width: 390;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 1628.4747314453125;
+    stroke-dashoffset: 1628.4747314453125;
+    animation-delay: 0.2s;
+}
+
+.sand-light {
+    stroke: #F1DDC5;
+    stroke-width: 390;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 1628.4747314453125;
+    stroke-dashoffset: 1628.4747314453125;
+    animation-delay: 0.3s;
+}
+
+.wave-xl {
+    stroke: #006A94;
+    stroke-width: 400;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 2748.8583984375;
+    stroke-dashoffset: 2748.8583984375;
+    animation-delay: 0.5s;
+}
+
+.wave-xs {
+    stroke: #83DEF1;
+    stroke-width: 200;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 2748.8583984375;
+    stroke-dashoffset: 2748.8583984375;
+    animation-delay: 0.6s;
+}
+
+.wave-lg {
+    stroke: #2999BC;
+    stroke-width: 400;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 2748.85498046875;
+    stroke-dashoffset: 2748.85498046875;
+    animation-delay: 0.5s;
+}
+
+.wave-sm {
+    stroke: #83DEF1;
+    stroke-width: 330;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 2748.859130859375;
+    stroke-dashoffset: 2748.859130859375;
+    animation-delay: 0.7s;
+}
+
+.wave-md {
+    stroke: #3EBDC8;
+    stroke-width: 270;
+    /* getting length via JavaScript and browser Console*/
+    stroke-dasharray: 2748.862060546875;
+    stroke-dashoffset: 2748.862060546875;
+    animation-delay: 0.5s;
+}
+
+/* stroke animations */
+@keyframes loading {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #fff;
+}
+
+h1 {
+    position: fixed;
+    font-size: 120px;
+    color: #fff;
+    background-color: #000;
+    font-weight: 100;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text animation */
+    clip-path: circle(0% at top left);
+    animation: clip 2s ease-out 0.6s 2 alternate forwards;
+    
+}
+
+@keyframes clip {
+    to {
+        clip-path: circle(150% at top left);
+    }
+}
+

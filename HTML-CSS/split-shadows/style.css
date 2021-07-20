@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    display: flex;
+    /* no scroll bar */
+    overflow: hidden; 
+}
+
+h1 {
+    font-size: 300px;
+    font-weight: 900;
+    text-shadow: 4px 4px #cf1578, 8px 8px #e8d21d, 12px 12px #b20238;
+    /* splitting shadows */
+    transition: all 0.2s ease-out;
+    color: #039fbe;
+}
+
+/* moving sections */
+section h1 {
+    transform: translateX(-10px);
+}
+
+main h1 {
+    transform: translateX(10px);
+}
+
+section:hover h1, main:hover h1 {
+    transform: translateX(0);
+    text-shadow: none;
+}
+
+/* resizing sections */
+section, main {
+    /* "flex-basis", because these are the children of the parent body; both side take 50% of the full screen*/
+    flex-basis: 50%;
+    display: flex;
+    transform: scale(1);
+    transition: all 0.8s ease-out;
+}
+
+main {
+    justify-content: flex-start;
+    align-items: center;
+}
+
+section {
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* hovering sections */
+section:hover, main:hover {
+    transform: scale(1.01);
+}
+
+section:hover {
+    box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+
+main:hover {
+    box-shadow: -5px 0px 10px 5px rgba(0, 0, 0, 0.2);
+}
+

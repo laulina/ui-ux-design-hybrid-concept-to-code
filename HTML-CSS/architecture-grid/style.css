@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: grid;
+    grid: repeat(7, 1fr) / repeat(14, 1fr);
+    gap: 25px;
+    overflow: hidden;
+}
+
+/* transition to all grid elements */
+main, aside, footer {
+    transition: all 0.4s ease-in-out;
+    overflow: hidden;
+}
+
+/* hovering grid elements */
+main {
+    grid-area: 1 / 1 / 8 / span 6;
+    background: url('azerbaijan.jpg') no-repeat center / 140%;
+    transform: translateX(0);
+}
+
+main:hover {
+    background: url('azerbaijan.jpg') no-repeat center / 100%;
+    transform: translateX(25px);
+}
+
+aside {
+    grid-area: 1 / 7 / 4 / 15;
+    background: url('switzerland.jpg') no-repeat center / 100%;
+    transform: translateY(0);
+}
+
+aside:hover {
+    background: url('switzerland.jpg') no-repeat center / 115%;
+    transform: translateY(25px);
+}
+
+footer {
+    grid-area: 5 / 7 / 8 / 15;
+    background: url('indonesia.jpg') no-repeat center / 100%;
+    transform: translateY(0);
+}
+
+footer:hover {
+    background: url('indonesia.jpg') no-repeat center / 115%;
+    transform: translateY(-25px);
+}
+
+/* adding banner */
+div {
+    grid-area: 3 / 4 / span 3 / 15;
+    background-color: rgba(255, 255, 255, 0.7);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 50px;
+    z-index: 50;
+}
+
+h1 {
+    text-transform: lowercase;
+    color: #000;
+    font-size: 60px;
+    font-weight: 100;
+    /* text clipping */
+    clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+    /* text animation  */
+    animation: revealRight 4s ease-out 0.5s forwards;
+}
+
+@keyframes revealRight {
+    to {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    }
+}
+
+/* arrow */
+svg {
+    margin: 5px 0 0 20px;
+    cursor: pointer;
+    transform: scale(1);
+    transform-origin: left center;
+    transition: all 0.2s ease-out;
+    opacity: 0;
+    animation: opacity 4s ease-out 3s forwards;
+}
+
+svg:hover {
+    transform: scale(1.9);
+}
+
+@keyframes opacity {
+    to {
+        opacity: 1;
+    }
+}
